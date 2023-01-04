@@ -22,12 +22,9 @@ function doNotFollowTheLink(e) {
     e.preventDefault();
 }
 
-document.querySelector('.gallery__item.gallery__link').onclick = () => {
-
-	basicLightbox.create(`
-		${data-source.innerHTML()}
-	`).show()
-
-}
+const showBigImg =	basicLightbox.create(`
+		<img src = "${evt.target.dataset.source}">
+	`)
+    showBigImg.show()
 
 console.log(galleryItems);
