@@ -2,7 +2,6 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galeryWrap = document.querySelector('.gallery');
-
 const creatingAnImageGallery = galleryItems.map(({ preview, original, description }) => {
     return `<li>
             <a class="gallery__item" href="${original}">
@@ -16,10 +15,10 @@ const creatingAnImageGallery = galleryItems.map(({ preview, original, descriptio
         .join('');
 
 galeryWrap.insertAdjacentHTML('afterbegin', creatingAnImageGallery);
-galeryWrap.addEventListener('click', enlargeImg);
 
-function doNotFollowTheLink(e) {
-    e.preventDefault();
-};
+new SimpleLightbox('.gallery a',{
+    captionsData: "alt",
+    captionDelay: 250,    
+});
 
 console.log(galleryItems);

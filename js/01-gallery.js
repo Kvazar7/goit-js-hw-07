@@ -2,7 +2,6 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galeryWrap = document.querySelector('.gallery');
-
 const creatingAnImageGallery = galleryItems.map(({ preview, original, description }) => {
     return `<li class="gallery__item">
             <a class="gallery__link" href="${original}">
